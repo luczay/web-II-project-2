@@ -1,0 +1,38 @@
+<html>
+    <head>
+        <title>Asd</title>
+    </head>
+    <body>
+        <h1>Valami</h1>
+        <form action="/utazas/index.php?tavaszi_utazasok" method="post"> 
+            <p>tavaszi_utazasok</p>
+            <input type="text" name="orszag">
+            <input type="submit">
+        </form>
+        <form action="/utazas/index.php?arfolyamok" method="post"> 
+            <p>arfolyamok</p>
+            <input type="text" name="start_date">
+            <input type="text" name="end_date">
+            <input type="text" name="currency_names">
+            <input type="submit">
+        </form>
+        <form action="/utazas/index.php?register" method="post"> 
+            <p>register</p>
+            <input type="text" name="firstname">
+            <input type="text" name="lastname">
+            <input type="text" name="username">
+            <input type="text" name="password">
+            <input type="submit">
+        </form>
+        <form action="/utazas/index.php?login" method="post"> 
+            <p>login</p>
+            <input type="text" name="username">
+            <input type="text" name="password">
+            <input type="submit">
+        </form>
+        <form action="/utazas/index.php?logout" method="post"> 
+            <p>logout</p>
+            <input type="submit">
+        </form>
+    </body>
+</html>

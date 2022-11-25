@@ -1,0 +1,5 @@
+"az"	"nev"	"orszag"
+1	Sousse	Tunezia
+2	Djerba	Tunezia
+3	Sharm El Sheikh	Egyiptom
+4	Hurghada	Egyiptom
