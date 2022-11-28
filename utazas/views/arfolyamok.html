@@ -35,40 +35,36 @@
             <li class="nav-item">
                 <a class="nav-link" href="/utazas/views/arfolyamok.html">Napi árfolyamok</a>
             </li>
-            <li id="sign-in-out" class="nav-item">
-                <a class="nav-link" href="#">Bejelentkezés</a>
+            <li class="nav-item">
+                <a class="nav-link sign-in-out" href="#">Bejelentkezés</a>
             </li>
         </ul>
     </div>
 
     <div class="w-50">
-        <h3>Szűrjön országra!</h3>
-        <form action="/utazas/index.php?tavaszi_utazasok" method="post">
+        <h2>Napi árfolyamok</h2>
+
+        <form action="/utazas/index.php?arfolyamok" method="post">
+
             <div class="form-group">
-                <label for="orszag">Ország</label>
-                <input type="text" class="form-control" id="orszag" name="orszag" aria-describedby="orszag"
-                       placeholder="Ország">
+
+                <label for="start_date">Kezdő dátum</label>
+                <input type="date" id="start_date" class="form-control datepicker" name="start_date"
+                       data-date-format="mm-dd-yyyy" placeholder="Kezdő dátum">
+
+                <label for="end_date">Záró dátum</label>
+                <input type="date" id="end_date" class="form-control datepicker" name="end_date"
+                       data-date-format="mm-dd-yyyy" placeholder="Záró dátum">
+
+                <label for="currency_names">Valuta típusa</label>
+                <input type="text" name="currency_names" id="currency_names" placeholder="Valuta"
+                       oninput="this.value = this.value.toUpperCase()">
             </div>
+
             <button type="submit" class="btn btn-primary">Küldés</button>
         </form>
-
-        <div id="content">
-        </div>
-
-        <!--<form action="/utazas/index.php?register" method="post">
-            <p>Regisztráció</p>
-            <input type="text" name="firstname" placeholder="Keresztnév">
-            <input type="text" name="lastname" placeholder="Vezetéknév">
-            <input type="text" name="username" placeholder="Felhasználónév">
-            <input type="text" name="password" placeholder="jelszó">
-            <input type="submit">
-        </form> -->
     </div>
 </main>
-
-<script>
-    $("#sign-in-out").append('<a class="nav-link" href="#">Bejelentkezés</a>');
-</script>
 
 </body>
 </html>
