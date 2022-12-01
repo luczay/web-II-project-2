@@ -4,7 +4,7 @@ $(document).ready(function(e) {
         return false;
     });
 
-    $.post('/utazas/index.php?get_sessions', {}, function(respond) {
+    $.post('/index.php?get_sessions', {}, function(respond) {
         var respond_as_json = JSON.parse(respond);
         if (respond_as_json.userloginname != '') {
             $('#login').css('display', 'none');
@@ -21,7 +21,7 @@ $(document).ready(function(e) {
 
 function get_utazasok() {
     var orszag = $('#orszag').val();
-    $.post('/utazas/index.php?tavaszi_utazasok', {orszag: orszag}, function(respond) {
+    $.post('/index.php?tavaszi_utazasok', {orszag: orszag}, function(respond) {
         var respond_as_json = JSON.parse(respond);
         $('#results_table').append('<tr><th>Szálloda neve</th>' 
                                     + '<th>Csillag</th>'

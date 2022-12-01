@@ -4,7 +4,7 @@ $(document).ready(function(e) {
         return false;
     });
 
-    $.post('/utazas/index.php?arfolyamok', {start_date: '2022-11-05', end_date: '2022-11-20', currency_names: 'EUR'}, function(respond) {
+    $.post('/index.php?arfolyamok', {start_date: '2022-11-05', end_date: '2022-11-20', currency_names: 'EUR'}, function(respond) {
         $('#today').text(respond[1]);
     });
 });

@@ -35,6 +35,7 @@
                 ";
             }
         }
+        echo('inside qry');
 
         $statement = $db->prepare($query);
         $statement->execute();

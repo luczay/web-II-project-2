@@ -52,6 +52,7 @@
         $controller = new $class; 
         if ($controllerfile == 'tavaszi_utazasok')
         {
+            echo('inside utazasok');
             if ($orszag != 'all')
             {
                 $orszag = $_POST['orszag'];
