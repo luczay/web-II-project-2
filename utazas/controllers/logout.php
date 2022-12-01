@@ -7,6 +7,7 @@
             $_SESSION['userfirstname'] = '';
             $_SESSION['userlastname'] = '';
             $_SESSION['userloginname'] = '';
+            include('views/index.html');
         }
     }
 ?>

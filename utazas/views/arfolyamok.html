@@ -1,70 +1,20 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Luczay-Danyádi utazási iroda</title>
-    <meta charset="UTF-8">
-
-    <link rel="stylesheet" href="/res/style.css">
-    <!--Bootstrap CSS -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css"
-          integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
-
-    <!-- Bootstrap Scripts -->
-    <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"
-            integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
-            crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"
-            integrity="sha384-Fy6S3B9q64WdZWQUiU+q4/2Lc9npb8tCaSX9FK7E8HnRr0Jz8D6OP9dO5Vg3Q9ct"
-            crossorigin="anonymous"></script>
+    <title>Árfolyamok</title>
+    <script src="https://code.jquery.com/jquery-3.6.1.min.js" integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" crossorigin="anonymous"></script>
+    <script src="/utazas/views/static/js/arfolyamok.js"></script>
 </head>
 
 <body>
-
-<header>
-    <img id="utazas" src="/res/img/utazas.png" alt="utazas"/>
-    <h1>Tekintse meg aktuális ajánlatainkat!</h1>
-    <img id="nap" src="/res/img/nap.png" alt="Nap"/>
-</header>
-
-<main>
-    <div class="w-25">
-        <ul class="nav nav-pills flex-column align-items-center">
-            <li class="nav-item">
-                <a class="nav-link" href="/utazas/index.php">Ajánlataink</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="/utazas/views/arfolyamok.html">Napi árfolyamok</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link sign-in-out" href="#">Bejelentkezés</a>
-            </li>
-        </ul>
+    <div>
+        <p id="today"></p>
     </div>
-
-    <div class="w-50">
-        <h2>Napi árfolyamok</h2>
-
-        <form action="/utazas/index.php?arfolyamok" method="post">
-
-            <div class="form-group">
-
-                <label for="start_date">Kezdő dátum</label>
-                <input type="date" id="start_date" class="form-control datepicker" name="start_date"
-                       data-date-format="mm-dd-yyyy" placeholder="Kezdő dátum">
-
-                <label for="end_date">Záró dátum</label>
-                <input type="date" id="end_date" class="form-control datepicker" name="end_date"
-                       data-date-format="mm-dd-yyyy" placeholder="Záró dátum">
-
-                <label for="currency_names">Valuta típusa</label>
-                <input type="text" name="currency_names" id="currency_names" placeholder="Valuta"
-                       oninput="this.value = this.value.toUpperCase()">
-            </div>
-
-            <button type="submit" class="btn btn-primary">Küldés</button>
-        </form>
-    </div>
-</main>
-
+    <form>
+        <input type="text" id="start_date" name="start_date" placeholder="2022-03-05"><br>
+        <input type="text" id="end_date" name="end_date" placeholder="2022-05-13"><br>
+        <input type="text" id="currency" name="currency" placeholder="EUR/USD"><br>
+        <button type="submit" id="submit_btn">Keres</button>
+    </form>
 </body>
 </html>

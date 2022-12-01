@@ -6,7 +6,7 @@
         public function main($orszag) 
         {
             $results = tavaszi_utazasok($orszag);
-            var_dump($results);
+            echo(json_encode($results));
         }
     }
 ?>

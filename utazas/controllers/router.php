@@ -5,12 +5,34 @@
     if(! isset($_SESSION['userlastname'])) $_SESSION['userlastname'] = "";
     if(! isset($_SESSION['userloginname'])) $_SESSION['userloginname'] = "";
 
+    $orszag = '';
     $request = $_SERVER['QUERY_STRING'];
     if ($_SERVER["REQUEST_METHOD"] == "POST") 
     {
         $page = $request;
     }
-    else 
+    else if ($request == 'tavaszi_utazasok')
+    {
+        $page = $request;
+        $orszag = 'all';
+    }
+    else if ($request == 'login')
+    {
+        $page = 'login_page';
+    }
+    else if ($request == 'register') 
+    {
+        $page = 'register_page';
+    }
+    else if ($request == 'logout') 
+    {
+        $page = 'logout';
+    }
+    else if ($request == 'arfolyamok')
+    {
+        $page = 'arfolyamok_page';
+    }
+    else
     {
         $page = 'main_page';
     }
@@ -30,7 +52,11 @@
         $controller = new $class; 
         if ($controllerfile == 'tavaszi_utazasok')
         {
-            $controller->main($_POST['orszag']);
+            if ($orszag != 'all')
+            {
+                $orszag = $_POST['orszag'];
+            } 
+            $controller->main($orszag);
         } 
         else if ($controllerfile == 'arfolyamok') 
         {
@@ -38,11 +64,11 @@
         }
         else if ($controllerfile == 'login')
         {
-            $controller->main($_POST['username'], $_POST['password']);
+            $controller->main($_POST['uname'], $_POST['password']);
         }
         else if ($controllerfile == 'register')
         {
-            $controller->main($_POST['firstname'], $_POST['lastname'], $_POST['username'], $_POST['password']);
+            $controller->main($_POST['first_name'], $_POST['last_name'], $_POST['uname'], $_POST['password']);
         }
         else
         {

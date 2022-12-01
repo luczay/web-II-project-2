@@ -6,7 +6,6 @@
                  $soapClient = new SoapClient("http://www.mnb.hu/arfolyamok.asmx?WSDL");
                  $result = $soapClient->GetExchangeRates(array('startDate' => $startDate, 'endDate' => $endDate, 'currencyNames' => $currencyNames))->GetExchangeRatesResult;
              } catch (SoapFault $e) {
-                 var_dump($e);
                  $result = false;
              }
       

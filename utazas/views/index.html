@@ -4,71 +4,66 @@
     <title>Luczay-Danyádi utazási iroda</title>
     <meta charset="UTF-8">
 
-    <link rel="stylesheet" href="/res/style.css">
+    <link rel="stylesheet" href="/utazas/views/static/css/style.css">
     <!--Bootstrap CSS -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css"
           integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
 
     <!-- Bootstrap Scripts -->
-    <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"
-            integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
-            crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.6.1.min.js" integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"
             integrity="sha384-Fy6S3B9q64WdZWQUiU+q4/2Lc9npb8tCaSX9FK7E8HnRr0Jz8D6OP9dO5Vg3Q9ct"
             crossorigin="anonymous"></script>
+    <script src="/utazas/views/static/js/index.js"></script>
 </head>
 
 <body>
 
 <header>
-    <img id="utazas" src="/res/img/utazas.png" alt="utazas"/>
+    <img id="utazas" src="/utazas/views/static/img/utazas.png" alt="utazas"/>
     <h1>Tekintse meg aktuális ajánlatainkat!</h1>
-    <img id="nap" src="/res/img/nap.png" alt="Nap"/>
+    <img id="nap" src="/utazas/views/static/img/nap.png" alt="Nap"/>
 </header>
 
 <main>
-    <div class="w-25">
-        <ul class="nav nav-pills flex-column align-items-center">
-            <li class="nav-item">
-                <a class="nav-link" href="/utazas/index.php">Ajánlataink</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="/utazas/views/arfolyamok.html">Napi árfolyamok</a>
-            </li>
-            <li id="sign-in-out" class="nav-item">
-                <a class="nav-link" href="#">Bejelentkezés</a>
-            </li>
-        </ul>
-    </div>
-
-    <div class="w-50">
-        <h3>Szűrjön országra!</h3>
-        <form action="/utazas/index.php?tavaszi_utazasok" method="post">
-            <div class="form-group">
-                <label for="orszag">Ország</label>
-                <input type="text" class="form-control" id="orszag" name="orszag" aria-describedby="orszag"
-                       placeholder="Ország">
+    <div class="container">
+        <div class="row">
+            <div class="col w-25">
+                <ul class="nav nav-pills flex-column align-items-center">
+                    <li id="login" class="nav-item">
+                        <a href="/utazas/index.php?login">Bejelentkezés</a>
+                    </li>
+                    <li id="register" class="nav-item">
+                        <a href="/utazas/index.php?register">Regisztráció</a>
+                    </li>
+                    <li id="logout" class="nav-item">
+                        <a href="/utazas/index.php?logout">Kijelentkezés</a>
+                    </li>
+                </ul>
             </div>
-            <button type="submit" class="btn btn-primary">Küldés</button>
-        </form>
 
-        <div id="content">
+            <div class="col w-50">
+                <h3>Szűrjön országra!</h3>
+                <form>
+                    <div class="form-group">
+                        <input type="text" class="form-control" id="orszag" name="orszag" aria-describedby="orszag"
+                            placeholder="Ország">
+                    </div>
+                    <button id="submit_btn" type="submit" class="btn btn-primary">Küldés</button>
+                </form>
+            </div>
         </div>
-
-        <!--<form action="/utazas/index.php?register" method="post">
-            <p>Regisztráció</p>
-            <input type="text" name="firstname" placeholder="Keresztnév">
-            <input type="text" name="lastname" placeholder="Vezetéknév">
-            <input type="text" name="username" placeholder="Felhasználónév">
-            <input type="text" name="password" placeholder="jelszó">
-            <input type="submit">
-        </form> -->
+        <div class="row">
+            <div class="col">
+                <table id="user_table" class="table"></table>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col">
+                <table id="results_table" class="table"></table>
+            </div>
+        </div>
     </div>
 </main>
-
-<script>
-    $("#sign-in-out").append('<a class="nav-link" href="#">Bejelentkezés</a>');
-</script>
-
 </body>
 </html>

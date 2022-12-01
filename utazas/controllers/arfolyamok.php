@@ -6,7 +6,7 @@
         public function main($startDate, $endDate, $currencyNames) 
         {
             $results = getExchangeRates($startDate, $endDate, $currencyNames);
-            var_dump($results);
+            echo(json_encode($results));
         }
     }
 ?>
