@@ -31,3 +31,12 @@ main {
 #logout {
     display: none;
 }
+
+.center-screen {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    margin-top: 40%;
+    min-height: 100vh;
+}
